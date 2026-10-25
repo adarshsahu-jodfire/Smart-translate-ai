@@ -1,38 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smart Translate AI | Premium Translator</title>
-
-<meta name="description" content="Smart Translate AI - A modern multilingual translation tool.">
+<title>Smart Translate AI</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 :root {
-    --bg: #f5f7ff;
-    --card: rgba(255,255,255,.88);
-    --text: #171a2b;
-    --muted: #747b91;
-    --border: #e6e9f3;
+    --bg: #f4f5ff;
+    --card: #ffffff;
+    --text: #20213a;
+    --muted: #777b96;
+    --border: #e5e7f3;
     --primary: #6558f5;
-    --secondary: #a855f7;
-    --input: #fafbff;
-    --shadow: 0 20px 70px rgba(49,42,120,.09);
+    --input: #fafaff;
 }
 
 body.dark {
-    --bg: #0b1020;
-    --card: rgba(20,27,49,.94);
-    --text: #f4f5ff;
-    --muted: #a0a8c0;
-    --border: #303750;
-    --primary: #8b80ff;
-    --secondary: #c084fc;
-    --input: #11182c;
-    --shadow: 0 20px 70px rgba(0,0,0,.22);
+    --bg: #0d1020;
+    --card: #171c30;
+    --text: #f5f5ff;
+    --muted: #a5abc4;
+    --border: #30364e;
+    --input: #111629;
 }
 
 * {
@@ -42,14 +33,11 @@ body.dark {
 }
 
 body {
-    min-height: 100vh;
-    font-family: 'Inter', Arial, sans-serif;
-    background:
-        radial-gradient(circle at 10% 5%, rgba(168,85,247,.12), transparent 30%),
-        radial-gradient(circle at 90% 25%, rgba(99,102,241,.12), transparent 30%),
-        var(--bg);
+    font-family: Arial, sans-serif;
+    background: var(--bg);
     color: var(--text);
-    transition: background .3s, color .3s;
+    min-height: 100vh;
+    transition: .25s;
 }
 
 button, select, textarea {
@@ -61,13 +49,13 @@ button {
 }
 
 .navbar {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
-    padding: 22px 24px;
+    padding: 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    gap: 12px;
 }
 
 .brand {
@@ -76,194 +64,121 @@ button {
     gap: 12px;
 }
 
-.brand-logo {
-    width: 46px;
-    height: 46px;
+.logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #6558f5, #bb55ee);
     display: grid;
     place-items: center;
-    border-radius: 15px;
     color: white;
-    font-size: 24px;
-    background: linear-gradient(135deg, #6558f5, #b14df5);
-    box-shadow: 0 8px 22px rgba(101,88,245,.25);
+    font-size: 25px;
 }
 
 .brand h2 {
     font-size: 19px;
-    font-weight: 800;
-    letter-spacing: -.6px;
 }
 
 .brand p {
     font-size: 11px;
+    margin-top: 5px;
     color: var(--muted);
-    margin-top: 4px;
 }
 
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.status-pill {
-    padding: 10px 14px;
+.theme {
+    width: 44px;
+    height: 44px;
     border: 1px solid var(--border);
-    border-radius: 30px;
-    font-size: 12px;
-    color: var(--muted);
-    background: var(--card);
-}
-
-.status-dot {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    background: #22c55e;
-    border-radius: 50%;
-    margin-right: 6px;
-}
-
-.theme-btn {
-    width: 43px;
-    height: 43px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 13px;
     background: var(--card);
     color: var(--text);
-    font-size: 19px;
+    font-size: 20px;
 }
 
 main {
-    max-width: 1080px;
-    padding: 35px 22px 60px;
+    width: min(950px, 100%);
     margin: auto;
+    padding: 30px 20px 50px;
 }
 
 .hero {
     text-align: center;
-    margin: 15px 0 40px;
-    animation: fadeUp .7s ease both;
+    margin-bottom: 35px;
 }
 
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 14px;
-    border: 1px solid rgba(133,100,255,.22);
-    border-radius: 30px;
-    background: rgba(133,100,255,.07);
+.badge {
+    display: inline-block;
     color: var(--primary);
+    background: #eae8ff;
+    padding: 9px 15px;
+    border-radius: 30px;
     font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-weight: bold;
+    margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-size: clamp(34px, 6vw, 62px);
-    letter-spacing: -2.5px;
-    line-height: 1.12;
-    font-weight: 800;
+    font-size: clamp(32px, 6vw, 55px);
+    line-height: 1.2;
 }
 
-.gradient-text {
-    background: linear-gradient(100deg, #6558f5, #bd4bf4, #e879a9);
-    -webkit-background-clip: text;
-    background-clip: text;
+.gradient {
+    background: linear-gradient(100deg, #6558f5, #bb55ee);
     color: transparent;
+    background-clip: text;
 }
 
 .hero p {
-    max-width: 570px;
-    margin: 18px auto 0;
-    font-size: 15px;
-    line-height: 1.8;
     color: var(--muted);
+    max-width: 550px;
+    margin: 15px auto 0;
+    line-height: 1.8;
+    font-size: 14px;
 }
 
 .translator {
-    border: 1px solid var(--border);
-    border-radius: 27px;
     background: var(--card);
-    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    border-radius: 23px;
     overflow: hidden;
-    backdrop-filter: blur(20px);
-    animation: fadeUp .8s ease both;
+    box-shadow: 0 15px 50px rgba(75, 65, 150, .08);
 }
 
-.language-bar {
-    padding: 20px 24px;
+.languages {
     display: grid;
-    grid-template-columns: 1fr 52px 1fr;
+    grid-template-columns: 1fr 48px 1fr;
+    gap: 12px;
     align-items: center;
-    gap: 15px;
+    padding: 20px;
     border-bottom: 1px solid var(--border);
 }
 
-.lang-select {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
-}
-
-.lang-icon {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    background: rgba(101,88,245,.1);
-    border-radius: 12px;
-    font-size: 19px;
-    flex-shrink: 0;
-}
-
-.lang-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.lang-info small {
+.language label {
     display: block;
+    font-size: 11px;
     color: var(--muted);
-    font-size: 10px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 9px;
 }
 
-select {
+.language select {
     width: 100%;
-    max-width: 100%;
-    background: transparent;
-    color: var(--text);
-    border: none;
-    outline: none;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-select option {
-    background: var(--card);
-    color: var(--text);
-}
-
-.swap-btn {
-    width: 46px;
-    height: 46px;
+    padding: 12px 8px;
     border: 1px solid var(--border);
-    border-radius: 15px;
-    color: var(--primary);
+    border-radius: 11px;
     background: var(--input);
-    font-size: 23px;
-    transition: .25s;
+    color: var(--text);
+    outline: none;
 }
 
-.swap-btn:hover {
-    transform: rotate(180deg);
-    border-color: var(--primary);
+.swap {
+    height: 43px;
+    width: 43px;
+    margin-top: 18px;
+    border-radius: 13px;
+    border: 1px solid var(--border);
+    background: var(--input);
+    color: var(--primary);
+    font-size: 23px;
 }
 
 .workspace {
@@ -272,186 +187,140 @@ select option {
 }
 
 .panel {
+    padding: 22px;
     min-width: 0;
-    padding: 24px;
 }
 
 .panel + .panel {
     border-left: 1px solid var(--border);
-    background: rgba(101,88,245,.025);
 }
 
-.panel-top {
+.panel-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 17px;
+    gap: 8px;
+    margin-bottom: 15px;
 }
 
-.panel-label {
+.panel-heading strong {
     font-size: 12px;
-    font-weight: 800;
+    letter-spacing: .7px;
+}
+
+.counter {
     color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 11px;
 }
 
 textarea {
-    display: block;
     width: 100%;
-    height: 205px;
+    height: 175px;
     resize: vertical;
-    padding: 0;
     border: none;
     outline: none;
-    color: var(--text);
     background: transparent;
-    font-size: 17px;
-    line-height: 1.85;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 textarea::placeholder {
     color: var(--muted);
-    opacity: .75;
 }
 
-.panel-bottom {
-    min-height: 40px;
+.panel-actions {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 8px;
     border-top: 1px solid var(--border);
     padding-top: 13px;
 }
 
-.counter {
-    font-size: 11px;
-    color: var(--muted);
-}
-
-.icon-actions {
-    display: flex;
-    gap: 7px;
-}
-
-.icon-btn {
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
+.small-btn {
+    padding: 9px 11px;
     border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--muted);
-    background: var(--card);
-    font-size: 15px;
-    transition: .2s;
-}
-
-.icon-btn:hover {
-    color: var(--primary);
-    border-color: var(--primary);
-    transform: translateY(-2px);
-}
-
-.translate-area {
-    padding: 0 24px 24px;
-}
-
-.translate-btn {
-    width: 100%;
-    padding: 17px;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    background: linear-gradient(105deg, #6558f5, #9451ef 60%, #bb4ef0);
-    box-shadow: 0 10px 25px rgba(101,88,245,.24);
-    font-size: 15px;
-    font-weight: 800;
-    transition: .25s;
-}
-
-.translate-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(101,88,245,.3);
-}
-
-.translate-btn:disabled {
-    opacity: .65;
-    cursor: wait;
-    transform: none;
-}
-
-.status-message {
-    text-align: center;
-    min-height: 25px;
-    padding-top: 12px;
-    color: var(--muted);
+    background: var(--input);
+    color: var(--text);
+    border-radius: 9px;
     font-size: 12px;
+}
+
+.small-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.translate-wrap {
+    padding: 0 22px 22px;
+}
+
+.translate {
+    width: 100%;
+    border: none;
+    padding: 16px;
+    color: white;
+    background: linear-gradient(100deg, #6558f5, #a14ee8);
+    border-radius: 13px;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 8px 20px rgba(101,88,245,.2);
+}
+
+.translate:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.status {
+    min-height: 35px;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
     line-height: 1.6;
 }
 
 .features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 25px;
+    gap: 14px;
+    margin-top: 22px;
 }
 
 .feature {
-    padding: 21px 17px;
-    border: 1px solid var(--border);
-    border-radius: 18px;
+    padding: 20px;
     background: var(--card);
-    transition: .25s;
+    border: 1px solid var(--border);
+    border-radius: 17px;
 }
 
-.feature:hover {
-    transform: translateY(-4px);
-    border-color: rgba(133,100,255,.4);
-}
-
-.feature-icon {
-    font-size: 23px;
-    margin-bottom: 12px;
+.feature span {
+    font-size: 25px;
 }
 
 .feature h3 {
-    font-size: 13px;
-    margin-bottom: 7px;
+    margin-top: 12px;
+    font-size: 14px;
 }
 
 .feature p {
+    margin-top: 8px;
+    font-size: 12px;
     color: var(--muted);
-    font-size: 11px;
     line-height: 1.7;
 }
 
 footer {
     text-align: center;
-    padding: 25px 15px 35px;
     color: var(--muted);
     font-size: 12px;
+    padding: 25px 15px 35px;
     line-height: 1.8;
 }
 
-footer strong {
-    color: var(--primary);
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 700px) {
+@media(max-width: 650px) {
     .navbar {
         padding: 16px;
     }
@@ -460,56 +329,28 @@ footer strong {
         font-size: 16px;
     }
 
-    .status-pill {
-        display: none;
-    }
-
     main {
-        padding: 28px 12px 40px;
+        padding: 25px 12px 35px;
     }
 
     .hero {
-        margin: 12px 0 27px;
+        margin-bottom: 25px;
     }
 
-    .hero h1 {
-        letter-spacing: -1.4px;
-    }
-
-    .hero p {
-        font-size: 13px;
-    }
-
-    .translator {
-        border-radius: 20px;
-    }
-
-    .language-bar {
-        padding: 15px 12px;
+    .languages {
         grid-template-columns: minmax(0,1fr) 38px minmax(0,1fr);
         gap: 7px;
+        padding: 15px 10px;
     }
 
-    .lang-select {
-        gap: 6px;
-    }
-
-    .lang-icon {
-        display: none;
-    }
-
-    .lang-info small {
-        font-size: 9px;
-    }
-
-    select {
-        font-size: 12px;
-    }
-
-    .swap-btn {
+    .swap {
         width: 36px;
         height: 36px;
-        border-radius: 11px;
+        font-size: 20px;
+    }
+
+    .language select {
+        font-size: 12px;
     }
 
     .workspace {
@@ -517,7 +358,7 @@ footer strong {
     }
 
     .panel {
-        padding: 20px 17px;
+        padding: 17px;
     }
 
     .panel + .panel {
@@ -526,33 +367,15 @@ footer strong {
     }
 
     textarea {
-        height: 150px;
-        font-size: 16px;
+        height: 140px;
     }
 
-    .translate-area {
-        padding: 0 17px 18px;
+    .translate-wrap {
+        padding: 0 15px 15px;
     }
 
     .features {
         grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .feature {
-        padding: 17px;
-    }
-
-    .feature-icon {
-        margin-bottom: 7px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
     }
 }
 </style>
@@ -562,255 +385,176 @@ footer strong {
 
 <nav class="navbar">
     <div class="brand">
-        <div class="brand-logo">文</div>
+        <div class="logo">文</div>
         <div>
             <h2>Smart Translate AI</h2>
             <p>LANGUAGE WITHOUT LIMITS</p>
         </div>
     </div>
 
-    <div class="nav-actions">
-        <div class="status-pill">
-            <span class="status-dot"></span>
-            Translator
-        </div>
-
-        <button class="theme-btn" id="themeBtn"
-                aria-label="Toggle dark mode" title="Toggle theme">
-            🌙
-        </button>
-    </div>
+    <button class="theme" id="themeBtn" aria-label="थीम बदलें">🌙</button>
 </nav>
 
 <main>
-
     <section class="hero">
-        <div class="eyebrow">✦ YOUR PERSONAL AI TRANSLATOR</div>
-
-        <h1>
-            Every word,<br>
-            <span class="gradient-text">a new connection.</span>
-        </h1>
-
-        <p>
-            Translate your thoughts into any language.
-            Fast, simple, and beautifully designed for everyone.
-        </p>
+        <div class="badge">✦ आपका स्मार्ट ट्रांसलेटर</div>
+        <h1>हर भाषा को समझें,<br><span class="gradient">हर दिल से जुड़ें।</span></h1>
+        <p>अपनी बात को दुनिया की अलग-अलग भाषाओं में बदलें। आसान, तेज़ और सुंदर अनुवाद अनुभव।</p>
     </section>
 
     <section class="translator">
 
-        <div class="language-bar">
-
-            <div class="lang-select">
-                <div class="lang-icon">🌐</div>
-                <div class="lang-info">
-                    <small>Translate from</small>
-                    <select id="sourceLang" aria-label="Source language">
-                        <option value="auto">Auto Detect</option>
-                        <option value="en">English</option>
-                        <option value="hi" selected>Hindi</option>
-                        <option value="mr">Marathi</option>
-                        <option value="gu">Gujarati</option>
-                        <option value="bn">Bengali</option>
-                        <option value="ta">Tamil</option>
-                        <option value="te">Telugu</option>
-                        <option value="ur">Urdu</option>
-                        <option value="pa">Punjabi</option>
-                        <option value="fr">French</option>
-                        <option value="es">Spanish</option>
-                        <option value="de">German</option>
-                        <option value="it">Italian</option>
-                        <option value="pt">Portuguese</option>
-                        <option value="ja">Japanese</option>
-                        <option value="ko">Korean</option>
-                        <option value="zh-CN">Chinese</option>
-                        <option value="ar">Arabic</option>
-                        <option value="ru">Russian</option>
-                    </select>
-                </div>
+        <div class="languages">
+            <div class="language">
+                <label for="sourceLang">इस भाषा से</label>
+                <select id="sourceLang">
+                    <option value="auto">भाषा पहचानें</option>
+                    <option value="hi" selected>हिंदी</option>
+                    <option value="en">अंग्रेज़ी</option>
+                    <option value="mr">मराठी</option>
+                    <option value="gu">गुजराती</option>
+                    <option value="bn">बंगाली</option>
+                    <option value="ta">तमिल</option>
+                    <option value="te">तेलुगु</option>
+                    <option value="ur">उर्दू</option>
+                    <option value="pa">पंजाबी</option>
+                    <option value="fr">फ़्रेंच</option>
+                    <option value="es">स्पेनिश</option>
+                    <option value="de">जर्मन</option>
+                    <option value="it">इतालवी</option>
+                    <option value="pt">पुर्तगाली</option>
+                    <option value="ja">जापानी</option>
+                    <option value="ko">कोरियाई</option>
+                    <option value="zh-CN">चीनी</option>
+                    <option value="ar">अरबी</option>
+                    <option value="ru">रूसी</option>
+                </select>
             </div>
 
-            <button class="swap-btn" id="swapBtn"
-                    aria-label="Swap languages" title="Swap languages">
-                ⇄
-            </button>
+            <button class="swap" id="swapBtn" aria-label="भाषाएँ बदलें">⇄</button>
 
-            <div class="lang-select">
-                <div class="lang-icon">✨</div>
-                <div class="lang-info">
-                    <small>Translate to</small>
-                    <select id="targetLang" aria-label="Target language">
-                        <option value="en" selected>English</option>
-                        <option value="hi">Hindi</option>
-                        <option value="mr">Marathi</option>
-                        <option value="gu">Gujarati</option>
-                        <option value="bn">Bengali</option>
-                        <option value="ta">Tamil</option>
-                        <option value="te">Telugu</option>
-                        <option value="ur">Urdu</option>
-                        <option value="pa">Punjabi</option>
-                        <option value="fr">French</option>
-                        <option value="es">Spanish</option>
-                        <option value="de">German</option>
-                        <option value="it">Italian</option>
-                        <option value="pt">Portuguese</option>
-                        <option value="ja">Japanese</option>
-                        <option value="ko">Korean</option>
-                        <option value="zh-CN">Chinese</option>
-                        <option value="ar">Arabic</option>
-                        <option value="ru">Russian</option>
-                    </select>
-                </div>
+            <div class="language">
+                <label for="targetLang">इस भाषा में</label>
+                <select id="targetLang">
+                    <option value="en" selected>अंग्रेज़ी</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="mr">मराठी</option>
+                    <option value="gu">गुजराती</option>
+                    <option value="bn">बंगाली</option>
+                    <option value="ta">तमिल</option>
+                    <option value="te">तेलुगु</option>
+                    <option value="ur">उर्दू</option>
+                    <option value="pa">पंजाबी</option>
+                    <option value="fr">फ़्रेंच</option>
+                    <option value="es">स्पेनिश</option>
+                    <option value="de">जर्मन</option>
+                    <option value="it">इतालवी</option>
+                    <option value="pt">पुर्तगाली</option>
+                    <option value="ja">जापानी</option>
+                    <option value="ko">कोरियाई</option>
+                    <option value="zh-CN">चीनी</option>
+                    <option value="ar">अरबी</option>
+                    <option value="ru">रूसी</option>
+                </select>
             </div>
-
         </div>
 
         <div class="workspace">
-
             <div class="panel">
-                <div class="panel-top">
-                    <span class="panel-label">Your text</span>
-                    <span class="counter" id="inputCounter">0 / 5000</span>
+                <div class="panel-heading">
+                    <strong>आपका टेक्स्ट</strong>
+                    <span class="counter" id="counter">0 / 5000</span>
                 </div>
 
                 <textarea id="inputText" maxlength="5000"
-                    placeholder="Type something wonderful..."></textarea>
+                    placeholder="यहाँ अपना टेक्स्ट लिखें..."></textarea>
 
-                <div class="panel-bottom">
-                    <span class="counter">Enter your message</span>
-
-                    <div class="icon-actions">
-                        <button class="icon-btn" id="clearBtn"
-                                title="Clear text" aria-label="Clear text">
-                            ✕
-                        </button>
-
-                        <button class="icon-btn" id="pasteBtn"
-                                title="Paste text" aria-label="Paste text">
-                            📋
-                        </button>
-                    </div>
+                <div class="panel-actions">
+                    <button class="small-btn" id="clearBtn">✕ साफ करें</button>
+                    <button class="small-btn" id="pasteBtn">📋 पेस्ट</button>
                 </div>
             </div>
 
             <div class="panel">
-                <div class="panel-top">
-                    <span class="panel-label">Translation</span>
-                    <span class="counter">✨ AI powered UI</span>
+                <div class="panel-heading">
+                    <strong>अनुवाद</strong>
+                    <span class="counter">परिणाम</span>
                 </div>
 
                 <textarea id="output" readonly
-                    placeholder="Your translation will appear here..."></textarea>
+                    placeholder="आपका अनुवाद यहाँ दिखाई देगा..."></textarea>
 
-                <div class="panel-bottom">
-                    <span class="counter" id="resultLabel">Ready to translate</span>
-
-                    <div class="icon-actions">
-                        <button class="icon-btn" id="copyBtn"
-                                title="Copy translation" aria-label="Copy translation">
-                            ⧉
-                        </button>
-
-                        <button class="icon-btn" id="speakBtn"
-                                title="Listen to translation" aria-label="Listen">
-                            🔊
-                        </button>
-                    </div>
+                <div class="panel-actions">
+                    <button class="small-btn" id="copyBtn">📋 कॉपी</button>
+                    <button class="small-btn" id="speakBtn">🔊 सुनें</button>
                 </div>
             </div>
-
         </div>
 
-        <div class="translate-area">
-            <button class="translate-btn" id="translateBtn">
-                ✨ &nbsp; Translate Now &nbsp; →
-            </button>
-
-            <div class="status-message" id="status"
-                 role="status" aria-live="polite"></div>
+        <div class="translate-wrap">
+            <button class="translate" id="translateBtn">✨ अभी अनुवाद करें →</button>
+            <div class="status" id="status" role="status" aria-live="polite"></div>
         </div>
 
     </section>
 
     <section class="features">
-
         <div class="feature">
-            <div class="feature-icon">🌍</div>
-            <h3>Multiple Languages</h3>
-            <p>Explore different languages and connect with people around the world.</p>
+            <span>🌍</span>
+            <h3>कई भाषाएँ</h3>
+            <p>अलग-अलग भाषाओं में अनुवाद करके दुनिया से जुड़ें।</p>
         </div>
 
         <div class="feature">
-            <div class="feature-icon">⚡</div>
-            <h3>Simple & Fast</h3>
-            <p>A clean interface designed to make translating text easy.</p>
+            <span>⚡</span>
+            <h3>आसान अनुभव</h3>
+            <p>सरल डिज़ाइन और सुविधाजनक बटन।</p>
         </div>
 
         <div class="feature">
-            <div class="feature-icon">🔊</div>
-            <h3>Listen & Learn</h3>
-            <p>Listen to translated text using your browser's speech feature.</p>
+            <span>🔊</span>
+            <h3>सुनकर सीखें</h3>
+            <p>ब्राउज़र की मदद से अनुवाद को आवाज़ में सुनें।</p>
         </div>
-
     </section>
-
 </main>
 
 <footer>
-    <p>Made with ❤️ for language lovers.</p>
-    <p><strong>Smart Translate AI</strong> · Your words, your world.</p>
-    <p>Translation depends on the availability of the external translation service.</p>
+    <p>❤️ Smart Translate AI के साथ भाषाओं की दूरी मिटाएँ।</p>
+    <p>अनुवाद के लिए इंटरनेट कनेक्शन आवश्यक है।</p>
 </footer>
 
 <script>
+"use strict";
+
 const $ = id => document.getElementById(id);
 
-const inputText = $("inputText");
+const input = $("inputText");
 const output = $("output");
-const sourceLang = $("sourceLang");
-const targetLang = $("targetLang");
-const translateBtn = $("translateBtn");
-const statusBox = $("status");
+const source = $("sourceLang");
+const target = $("targetLang");
+const translateButton = $("translateBtn");
+const status = $("status");
 
-const languageNames = {
-    en: "English",
-    hi: "Hindi",
-    mr: "Marathi",
-    gu: "Gujarati",
-    bn: "Bengali",
-    ta: "Tamil",
-    te: "Telugu",
-    ur: "Urdu",
-    pa: "Punjabi",
-    fr: "French",
-    es: "Spanish",
-    de: "German",
-    it: "Italian",
-    pt: "Portuguese",
-    ja: "Japanese",
-    ko: "Korean",
-    "zh-CN": "Chinese",
-    ar: "Arabic",
-    ru: "Russian"
-};
-
-function updateCounter() {
-    $("inputCounter").textContent =
-        `${inputText.value.length} / 5000`;
+function showStatus(message) {
+    status.textContent = message;
 }
 
-inputText.addEventListener("input", updateCounter);
+function updateCounter() {
+    $("counter").textContent = input.value.length + " / 5000";
+}
 
+input.addEventListener("input", updateCounter);
+
+// डार्क और लाइट मोड
 $("themeBtn").addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    const isDark = document.body.classList.contains("dark");
-
-    $("themeBtn").textContent = isDark ? "☀️" : "🌙";
+    const dark = document.body.classList.contains("dark");
+    $("themeBtn").textContent = dark ? "☀️" : "🌙";
 
     try {
-        localStorage.setItem("smartTranslateTheme", isDark ? "dark" : "light");
+        localStorage.setItem("smartTranslateTheme", dark ? "dark" : "light");
     } catch (error) {}
 });
 
@@ -821,55 +565,189 @@ try {
     }
 } catch (error) {}
 
+// टेक्स्ट साफ करें
+$("clearBtn").addEventListener("click", () => {
+    input.value = "";
+    output.value = "";
+    updateCounter();
+    showStatus("");
+    input.focus();
+});
+
+// भाषा बदलें
 $("swapBtn").addEventListener("click", () => {
-    if (sourceLang.value === "auto") {
-        statusBox.textContent =
-            "Select a source language before swapping.";
+    if (source.value === "auto") {
+        showStatus("भाषाएँ बदलने के लिए पहले स्रोत भाषा चुनें।");
         return;
     }
 
-    const oldSource = sourceLang.value;
-
-    sourceLang.value = targetLang.value;
-    targetLang.value = oldSource;
+    const oldSource = source.value;
+    source.value = target.value;
+    target.value = oldSource;
 
     if (output.value) {
-        inputText.value = output.value;
+        input.value = output.value;
         output.value = "";
         updateCounter();
-        $("resultLabel").textContent = "Ready to translate";
     }
 
-    statusBox.textContent = "";
+    showStatus("");
 });
 
-$("clearBtn").addEventListener("click", () => {
-    inputText.value = "";
-    output.value = "";
-    updateCounter();
-    statusBox.textContent = "";
-    $("resultLabel").textContent = "Ready to translate";
-    inputText.focus();
-});
-
+// पेस्ट
 $("pasteBtn").addEventListener("click", async () => {
     try {
-        inputText.value = await navigator.clipboard.readText();
+        input.value = await navigator.clipboard.readText();
         updateCounter();
-        statusBox.textContent = "Text pasted successfully.";
+        showStatus("टेक्स्ट पेस्ट हो गया।");
     } catch (error) {
-        statusBox.textContent =
-            "Clipboard access is unavailable. Please paste manually.";
+        showStatus("पेस्ट की अनुमति नहीं मिली। टेक्स्ट बॉक्स में देर तक दबाकर Paste चुनें।");
     }
 });
 
+// कॉपी
 $("copyBtn").addEventListener("click", async () => {
     if (!output.value) {
-        statusBox.textContent = "Translate some text first.";
+        showStatus("पहले अनुवाद करें।");
         return;
     }
 
     try {
         await navigator.clipboard.writeText(output.value);
-        statusBox.textContent = "Translation copied!";
-    } catch (error) 
+        showStatus("अनुवाद कॉपी हो गया।");
+    } catch (error) {
+        output.focus();
+        output.select();
+
+        try {
+            const ok = document.execCommand("copy");
+            showStatus(ok ? "अनुवाद कॉपी हो गया।" : "टेक्स्ट चुनकर कॉपी करें।");
+        } catch (e) {
+            showStatus("टेक्स्ट चुनकर कॉपी करें।");
+        }
+    }
+});
+
+// अनुवाद
+translateButton.addEventListener("click", async () => {
+    const text = input.value.trim();
+
+    if (!text) {
+        showStatus("कृपया पहले टेक्स्ट लिखें।");
+        input.focus();
+        return;
+    }
+
+    if (source.value === target.value) {
+        showStatus("कृपया दो अलग-अलग भाषाएँ चुनें।");
+        return;
+    }
+
+    translateButton.disabled = true;
+    translateButton.textContent = "⏳ अनुवाद हो रहा है...";
+    output.value = "";
+    showStatus("अनुवाद सेवा से संपर्क किया जा रहा है...");
+
+    try {
+        const params = new URLSearchParams({
+            client: "gtx",
+            sl: source.value,
+            tl: target.value,
+            dt: "t",
+            q: text
+        });
+
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
+
+        let response;
+
+        try {
+            response = await fetch(
+                "https://translate.googleapis.com/translate_a/single?" +
+                params.toString(),
+                { signal: controller.signal }
+            );
+        } finally {
+            clearTimeout(timeout);
+        }
+
+        if (!response.ok) {
+            throw new Error("अनुवाद सेवा उपलब्ध नहीं है।");
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data) || !Array.isArray(data[0])) {
+            throw new Error("अनुवाद का परिणाम नहीं मिला।");
+        }
+
+        const result = data[0]
+            .map(part => Array.isArray(part) ? part[0] || "" : "")
+            .join("");
+
+        if (!result) {
+            throw new Error("खाली अनुवाद मिला।");
+        }
+
+        output.value = result;
+        showStatus("✅ अनुवाद पूरा हो गया!");
+
+    } catch (error) {
+        showStatus(
+            error.name === "AbortError"
+                ? "अनुवाद में समय लग रहा है। दोबारा कोशिश करें।"
+                : "अनुवाद सेवा अभी काम नहीं कर रही। इंटरनेट जाँचें या बाद में कोशिश करें।"
+        );
+    } finally {
+        translateButton.disabled = false;
+        translateButton.textContent = "✨ अभी अनुवाद करें →";
+    }
+});
+
+// अनुवाद सुनें
+$("speakBtn").addEventListener("click", () => {
+    if (!output.value.trim()) {
+        showStatus("पहले अनुवाद करें।");
+        return;
+    }
+
+    if (!("speechSynthesis" in window)) {
+        showStatus("आपके ब्राउज़र में आवाज़ की सुविधा उपलब्ध नहीं है।");
+        return;
+    }
+
+    const speechCodes = {
+        en: "en-US",
+        hi: "hi-IN",
+        mr: "mr-IN",
+        gu: "gu-IN",
+        bn: "bn-IN",
+        ta: "ta-IN",
+        te: "te-IN",
+        ur: "ur-PK",
+        pa: "pa-IN",
+        fr: "fr-FR",
+        es: "es-ES",
+        de: "de-DE",
+        it: "it-IT",
+        pt: "pt-PT",
+        ja: "ja-JP",
+        ko: "ko-KR",
+        "zh-CN": "zh-CN",
+        ar: "ar-SA",
+        ru: "ru-RU"
+    };
+
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(output.value);
+    utterance.lang = speechCodes[target.value] || "en-US";
+
+    window.speechSynthesis.speak(utterance);
+    showStatus("🔊 अनुवाद सुनाया जा रहा है।");
+});
+</script>
+
+</body>
+    </html>
